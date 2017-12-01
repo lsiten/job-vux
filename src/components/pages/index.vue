@@ -31,10 +31,10 @@
     <div class="recommendTitle">
       -为你推荐的好职位-
     </div>
-    <scroller v-model="scrollerStatus" height="-46"   lock-x scrollbar-y  ref="scroller"  :use-pullup="showUp" :pullup-config="upobj" @on-pullup-loading="selPullUp" >
+    <scroller v-model="scrollerStatus" height="-368"   lock-x scrollbar-y  ref="scroller"  :use-pullup="showUp" :pullup-config="upobj" @on-pullup-loading="selPullUp" >
       <!--职位列表开始  -->
       <swipeout class="vux-1px-b">
-        <div  v-for="job in jobLists" >
+        <div  v-for="job in jobLists" v-bind:key="job.jobId">
           <swipeout-item transition-mode="follow" >
             <div slot="right-menu">
               <swipeout-button>
@@ -51,8 +51,8 @@
               </div>
               <div class="work-content">
                 <div class="conditions">
-                  <span v-for="jobRequirement in job.jobRequirements">{{jobRequirement}}</span><small class="right-time">{{job.jobPublishTime}}</small></div>
-                <div class="tags"><span v-for="jobTag in job.jobTags">{{jobTag}}</span></div>
+                  <span v-for="jobRequirement in job.jobRequirements" v-bind:key="jobRequirement">{{jobRequirement}}</span><small class="right-time">{{job.jobPublishTime}}</small></div>
+                <div class="tags"><span v-for="jobTag in job.jobTags" v-bind:key="jobTag">{{jobTag}}</span></div>
               </div>
               <div class="work-footer">
                 <div class="icon">
@@ -60,7 +60,7 @@
                 </div>
                 <div class="label">
                   <p>{{job.companyInfo.name}}</p>
-                  <p class="basic-info"><span v-for="companyBasic in job.companyInfo.companyBasics">{{companyBasic}}</span></p>
+                  <p class="basic-info"><span v-for="companyBasic in job.companyInfo.companyBasics" v-bind:key="companyBasic">{{companyBasic}}</span></p>
                 </div>
               </div>
             </div>

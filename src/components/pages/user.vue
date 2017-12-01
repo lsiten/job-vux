@@ -17,28 +17,28 @@
           <div class="vux-1px-r">
             <span>15</span>
              <br/>
-             我的经验
+             我的投递
           </div>
           <div class="vux-1px-r">
             <span>0</span>
             <br/>
-            我的卡券
+            我的粉丝
           </div>
          </div>
       </card>
 
       <group>
-      <cell title="cell" value="hello" is-link></cell>
-      <cell-box is-link>
-        cell-box long long long long long long long
-      </cell-box>
-      <cell title="cell" value="hello" is-link></cell>
+      <cell title="我的投递"  is-link></cell>
+      <cell title="我的简历"  is-link></cell>
+      <box gap="10px 10px">
+          <x-button plain type="warn" style="border-radius:99px;">退出登陆</x-button>
+      </box>
     </group>
   </div>
 </template>
 
 <script>
-import {Card,Group,Cell,CellBox,Blur} from 'vux';
+import {Card,Group,Cell,CellBox,Blur,XButton,Box} from 'vux';
 export default {
   data(){
     return {
@@ -50,7 +50,9 @@ export default {
     Group,
     Cell,
     CellBox,
-    Blur
+    Blur,
+    XButton,
+    Box
   }
 }
 </script>
